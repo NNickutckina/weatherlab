@@ -1,0 +1,26 @@
+{
+  "name": "weatherlab",
+  "description": "cgi",
+  "main": "index.html",
+  "authors": [
+    "NNickutckina"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "weather"
+  ],
+  "moduleType": [],
+  "homepage": "https://github.com/NNickutckina",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "jsrender": "~1.0.0-rc.70"
+  }
+}

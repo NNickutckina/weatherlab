@@ -1,0 +1,22 @@
+{
+  "name": "weatherlab",
+  "version": "1.0.0",
+  "description": "cgi",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NNickutckina/weatherlab.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "NNickutckina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NNickutckina/weatherlab/issues"
+  },
+  "homepage": "https://github.com/NNickutckina/weatherlab#readme"
+}
