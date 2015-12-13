@@ -4,7 +4,7 @@ $(function() {
 	$(".result").html(
 		$( "#weatherTemplate" ).render( data.list )
 	);
-  }
+  };
   
   $(".search")
     .on("click", function() {
@@ -14,6 +14,6 @@ $(function() {
             url: url,
             type: 'GET',
             dataType: 'json'
-        }).done(resultHandler)                
-    })
-}) 
+        }).done(resultHandler);                
+    });
+});

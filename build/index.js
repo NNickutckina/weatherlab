@@ -1,0 +1,1 @@
+$(function(){var e=function(e){$(".result-table").show(),$(".result").html($("#weatherTemplate").render(e.list))};$(".search").on("click",function(){var a=$(".city").val(),t="http://api.openweathermap.org/data/2.5/forecast?q="+a+"&units=metric&lang=ru&appid=2de143494c0b295cca9337e1e96b00e0";$.ajax({url:t,type:"GET",dataType:"json"}).done(e)})});

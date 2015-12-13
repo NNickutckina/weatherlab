@@ -2,7 +2,7 @@
   "name": "weatherlab",
   "version": "1.0.0",
   "description": "cgi",
-  "main": "index.html",
+  "main": "./build/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

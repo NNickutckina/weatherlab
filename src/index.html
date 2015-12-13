@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+	<link rel='stylesheet' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' type='text/css' media='all'>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/jsrender/jsrender.min.js" type="text/javascript"></script>
+	<link href="index.css" rel="stylesheet">
+	<script src="index.js"></script>
+	
+</head>
+
+<body>
+ 
+	<script id="weatherTemplate" type="text/x-jsrender">
+		<tr>
+			<td>{{>dt_txt}}</td>
+			<td>{{>main.temp + " C"}}</td>
+			<td>{{>weather[0].description}}</td>
+		</tr>
+	</script>
+ 
+	<div class="container">
+		<h1>Хочу знать погоду!</h1>
+		<h3>Покажи мне погоду в  
+			<input class='city form-control-static' placeholder="этом городе"></input>
+		</h3>
+		<button class='search btn btn-success btn-lg'>Покажи погоду!</button>
+		<table class="result-table table table-striped">
+			<thead>
+				<tr>
+					<th>Когда</th>
+					<th>Сколько градусов?</th>
+					<th>А вообще как?</th>
+				</tr>			
+			</thead>
+			<tbody class='result'></tbody>
+		</table>		
+	</div>
+
+</body>
+
+</html>

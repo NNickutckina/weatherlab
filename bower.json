@@ -1,7 +1,7 @@
 {
   "name": "weatherlab",
   "description": "cgi",
-  "main": "index.html",
+  "main": "./build/index.html",
   "authors": [
     "NNickutckina"
   ],
