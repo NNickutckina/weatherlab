@@ -22,5 +22,8 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.6",
     "jsrender": "~1.0.0-rc.70"
+  },
+  "devDependencies": {
+    "jasmine-core": "jasmine#~2.4.1"
   }
 }
