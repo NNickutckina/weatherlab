@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('wheatherApp', []);
 	
-	app.controller('MainCtrl', function($scope, $http, $timeout) {
+	app.controller('MainCtrl', function($scope, $http) {
 		$scope.showTable = false;
 		$scope.units = 'metric';
 		$scope.days = 2;
@@ -9,12 +9,12 @@
 		$scope.getTime = function(time) {
 			var date = new Date(time * 1000);
 			return date.toLocaleString();
-		}
+		};
 		$scope.search = function() {
 			if (isCityNameIncorrect($scope.city)) {
 				alert("Try again, type some more letters!");
 				return;
-			};
+			}
 			
 			var url = 'http://api.openweathermap.org/data/2.5/forecast/daily';
 			$http.jsonp(url, { params : {
@@ -28,6 +28,20 @@
 				$scope.showTable = true;
 				$scope.wheatherList = response.list;
 			});				
-		}
+		};
     });
+	
+	app.directive('ngEnter', function() {
+		return function(scope, element, attrs) {
+			element.bind("keydown keypress", function(event) {
+				if(event.which === 13) {
+					scope.$apply(function(){
+							scope.$eval(attrs.ngEnter);
+					});
+					
+					event.preventDefault();
+				}
+			});
+		};
+	});	
 }());

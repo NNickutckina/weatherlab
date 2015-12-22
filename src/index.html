@@ -12,13 +12,13 @@
 	<div ng-app="wheatherApp" ng-controller="MainCtrl" class="container" >
 		<h1>Хочу знать погоду!</h1>
 		<h3>Покажи мне погоду в  
-			<input  ng-model="city" class='city form-control-static' placeholder="этом городе"></input>
+			<input  ng-model="city" class='city form-control-static' ng-enter="search()" placeholder="этом городе"></input>
 			<button class='search btn btn-success btn-lg' ng-click="search()">Покажи погоду!</button>
 		</h3>
 		<h4>Дней  
-			<input value="2" type="number" ng-model="days" min="1"max="16"  class='form-control-static' ></input>
+			<input ng-change="search()" value="2" type="number" ng-model="days" min="1"max="16"  class='form-control-static' ></input>
 			Язык  
-			<select ng-model="lang" class='form-control-static' >
+			<select ng-change="search()" ng-model="lang" class='form-control-static' >
 		      <option selected="true" value="ru">Русский</option>
 			  <option value="en">Английский</option>	
 			  <option value="de">Немецкий</option>	

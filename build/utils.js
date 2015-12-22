@@ -1,0 +1,1 @@
+var isCityNameIncorrect=function(r){return""===r||r.length<2},isServerAnswerIncorrect=function(r){return""===r||"404"===r.cod};
