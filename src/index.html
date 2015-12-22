@@ -1,34 +1,30 @@
-<html>
+<html ng-app="wheatherApp">
 
 <head>
-
 	<link rel='stylesheet' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' type='text/css' media='all'>
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../bower_components/jsrender/jsrender.min.js" type="text/javascript"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
 	<link href="index.css" rel="stylesheet">
 	<script src="utils.js"></script>
 	<script src="index.js"></script>
-	
 </head>
 
 <body>
- 
-	<script id="weatherTemplate" type="text/x-jsrender">
-		<tr>
-			<td>{{>dt_txt}}</td>
-			<td>{{>main.temp + " C"}}</td>
-			<td>{{>weather[0].description}}</td>
-		</tr>
-	</script>
- 
-	<div class="container">
+	<div ng-app="wheatherApp" ng-controller="MainCtrl" class="container" >
 		<h1>Хочу знать погоду!</h1>
 		<h3>Покажи мне погоду в  
-			<input class='city form-control-static' placeholder="этом городе"></input>
-			<button class='search btn btn-success btn-lg'>Покажи погоду!</button>
+			<input  ng-model="city" class='city form-control-static' placeholder="этом городе"></input>
+			<button class='search btn btn-success btn-lg' ng-click="search()">Покажи погоду!</button>
 		</h3>
-		
-		<table class="result-table table table-striped">
+		<h4>Дней  
+			<input value="2" type="number" ng-model="days" min="1"max="16"  class='form-control-static' ></input>
+			Язык  
+			<select ng-model="lang" class='form-control-static' >
+		      <option selected="true" value="ru">Русский</option>
+			  <option value="en">Английский</option>	
+			  <option value="de">Немецкий</option>	
+			</select>
+		</h4>		
+		<table ng-show="showTable" class="result-table table table-striped">
 			<thead>
 				<tr>
 					<th>Когда</th>
@@ -36,7 +32,11 @@
 					<th>А вообще как?</th>
 				</tr>			
 			</thead>
-			<tbody class='result'></tbody>
+				<tr ng-repeat="current in wheatherList">
+					<td>{{getTime(current.dt)}}</td>
+					<td>{{current.temp.day + " C"}}</td>
+					<td>{{current.weather[0].description}}</td>
+				</tr>
 		</table>		
 	</div>
 
